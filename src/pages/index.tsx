@@ -34,8 +34,8 @@ export default function HomePage() {
               priority
               useSkeleton
               src='/images/melicena-round.png'
-              width='480'
-              height='460'
+              width='320'
+              height='300'
               alt='Melicena Logo'
             />
           </div>

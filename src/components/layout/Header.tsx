@@ -9,7 +9,7 @@ const links = [
 
 export default function Header() {
   return (
-    <header className='sticky top-0 z-50 m-12 bg-white'>
+    <header className='sticky top-0 z-50 m-3 bg-white md:m-12'>
       <div className='layout h-21 flex items-center justify-between'>
         <UnstyledLink href='/' className='flex font-bold hover:text-gray-600'>
           <NextImage
