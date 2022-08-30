@@ -1,18 +1,25 @@
-import * as React from 'react';
-
 import UnstyledLink from '@/components/links/UnstyledLink';
+import NextImage from '@/components/NextImage';
 
 const links = [
-  { href: '/', label: 'Route 1' },
-  { href: '/', label: 'Route 2' },
+  { href: '/', label: 'Inicio' },
+  { href: '/galeria', label: 'Galería' },
+  { href: '/contacto', label: 'Contacto' },
 ];
 
 export default function Header() {
   return (
-    <header className='sticky top-0 z-50 bg-white'>
-      <div className='layout flex h-14 items-center justify-between'>
-        <UnstyledLink href='/' className='font-bold hover:text-gray-600'>
-          Home
+    <header className='sticky top-0 z-50 m-12 bg-white'>
+      <div className='layout h-21 flex items-center justify-between'>
+        <UnstyledLink href='/' className='flex font-bold hover:text-gray-600'>
+          <NextImage
+            priority
+            useSkeleton
+            src='/images/melicena-round.png'
+            width='90'
+            height='90'
+            alt='Melicena Logo'
+          />
         </UnstyledLink>
         <nav>
           <ul className='flex items-center justify-between space-x-4'>

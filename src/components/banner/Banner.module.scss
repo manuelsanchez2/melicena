@@ -1,0 +1,49 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/colors.scss';
+
+.banner {
+  &-wrapper {
+    background-color: map-get($colors, 'dark');
+    margin: 8rem auto 5rem;
+    width: 100%;
+  }
+
+  &-inner {
+    @include container;
+    display: flex;
+    position: relative;
+    justify-content: center;
+  }
+
+  &-text {
+    color: map-get($colors, 'light');
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &-image {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+@media (min-width: 768px) {
+  .banner {
+    &-image {
+      display: block;
+    }
+
+    &-text {
+      align-items: flex-start;
+    }
+
+    &-inner {
+      justify-content: flex-start;
+    }
+  }
+}
