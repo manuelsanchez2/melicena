@@ -13,8 +13,8 @@ export interface BannerProps extends React.HTMLProps<HTMLDivElement> {
 
 const Banner: React.FC<BannerProps> = (props: BannerProps) => {
   return (
-    <div className={styles['banner-wrapper']}>
-      <div className={styles['banner-inner']}>
+    <div className={`${styles['banner-wrapper']}`}>
+      <div className={`${styles['banner-inner']} layout`}>
         <div className={styles['banner-text']}>
           <h1>{props.title}</h1>
           <p>{props.messageFirst}</p>
