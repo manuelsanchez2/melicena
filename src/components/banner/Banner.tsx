@@ -38,8 +38,8 @@ const Banner: React.FC<BannerProps> = (props: BannerProps) => {
             useSkeleton
             src='/images/melicena-app.svg'
             alt='Melicena App'
-            width='700'
-            height='400'
+            width='220'
+            height='120'
           />
         </div>
       </div>
