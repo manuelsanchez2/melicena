@@ -9,30 +9,32 @@ const links = [
 
 export default function Header() {
   return (
-    <header className='sticky top-0 z-50 m-3 bg-white md:m-12'>
-      <div className='layout h-21 flex items-center justify-between'>
-        <UnstyledLink href='/' className='flex font-bold hover:text-gray-600'>
-          <NextImage
-            priority
-            useSkeleton
-            src='/images/melicena-round.png'
-            width='90'
-            height='90'
-            alt='Melicena Logo'
-          />
-        </UnstyledLink>
-        <nav>
-          <ul className='flex items-center justify-between space-x-4'>
-            {links.map(({ href, label }) => (
-              <li key={`${href}${label}`}>
-                <UnstyledLink href={href} className='hover:text-gray-600'>
-                  {label}
-                </UnstyledLink>
-              </li>
-            ))}
-          </ul>
-        </nav>
+    <div className='navbar bg-base-100 container p-4 mx-auto'>
+      <div className='flex-1'>
+        <a className='btn btn-ghost normal-case text-xl'>Melicena</a>
       </div>
-    </header>
+      <div className='flex-none'>
+        <ul className='menu menu-horizontal px-1'>
+          <li>
+            <UnstyledLink href='/' className='hover:text-gray-600'>
+              Inicio
+            </UnstyledLink>
+          </li>
+          <li>
+            <details>
+              <summary>Sobre el pueblo</summary>
+              <ul className='p-2 bg-base-100'>
+                <li>
+                  <a>Galería</a>
+                </li>
+                <li>
+                  <a>Contacto</a>
+                </li>
+              </ul>
+            </details>
+          </li>
+        </ul>
+      </div>
+    </div>
   );
 }

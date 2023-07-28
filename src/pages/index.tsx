@@ -1,4 +1,5 @@
 import Banner from '@/components/banner/Banner';
+import CardItem from '@/components/card/CardItem';
 import Hero from '@/components/hero/Hero';
 import Header from '@/components/layout/Header';
 import Layout from '@/components/layout/Layout';
@@ -18,9 +19,9 @@ export default function HomePage() {
           className='mx-auto container p-4'
           aria-label='Información sobre el pueblo'
         >
-          <h2 className='my-3 text-3xl font-bold'>Sobre Melicena</h2>
+          <h2 className='my-3 text-3xl font-bold mb-4'>Sobre Melicena</h2>
 
-          <div className='container mx-auto my-12 flex flex-col items-center md:flex-row md:items-start gap-6'>
+          <div className='container mx-auto my-24 flex flex-col items-center md:flex-row md:items-start gap-12'>
             <Image
               src='/images/info-0.png'
               width='400'
@@ -49,7 +50,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className='container mx-auto my-12 flex flex-col items-center md:items-start md:flex-row-reverse gap-6'>
+          <div className='container mx-auto my-24 flex flex-col items-center md:items-start md:flex-row-reverse gap-12'>
             <Image
               src='/images/info-1.png'
               width='400'
@@ -80,24 +81,14 @@ export default function HomePage() {
         </section>
 
         {/* section - places of interest */}
-        <section>
-          <h2 className='my-3 text-3xl font-bold'>Lugares de interés</h2>
+        <section
+          className='mx-auto container p-4'
+          aria-label='Lugares de interés de Melicena'
+        >
+          <h2 className='my-3 text-3xl font-bold mb-4'>Lugares de interés</h2>
 
           <ul>
-            <li>
-              <div className='card w-96 bg-base-100 shadow-xl'>
-                <figure>
-                  <img src='/images/hero.png' alt='Shoes' />
-                </figure>
-                <div className='card-body'>
-                  <h2 className='card-title'>Shoes!</h2>
-                  <p>If a dog chews shoes whose shoes does he choose?</p>
-                  <div className='card-actions justify-end'>
-                    <button className='btn btn-primary'>Buy Now</button>
-                  </div>
-                </div>
-              </div>
-            </li>
+            <CardItem index={1} />
           </ul>
         </section>
         {/* <Banner
