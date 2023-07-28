@@ -1,4 +1,5 @@
 import UnstyledLink from '@/components/links/UnstyledLink';
+import ModeToggler from '@/components/mode-toggler/ModeToggler';
 import NextImage from '@/components/NextImage';
 
 const links = [
@@ -14,6 +15,7 @@ export default function Header() {
         <a className='btn btn-ghost normal-case text-xl'>Melicena</a>
       </div>
       <div className='flex-none'>
+        <ModeToggler />
         <ul className='menu menu-horizontal px-1'>
           <li>
             <UnstyledLink href='/' className='hover:text-gray-600'>
