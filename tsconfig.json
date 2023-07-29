@@ -21,6 +21,7 @@
     "incremental": true
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "cypress/e2e/app.cy.js"],
-  "exclude": ["node_modules"],
+  "exclude": ["node_modules", "./cypress.config.ts"],
+
   "moduleResolution": ["node_modules", ".next", "node"]
 }
