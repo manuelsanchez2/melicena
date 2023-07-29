@@ -4,6 +4,8 @@
 
 # Melicena Web Page
 
+[![Code Check](https://github.com/manuelsanchez2/melicena-nextjs/actions/workflows/lint.yml/badge.svg)](https://github.com/manuelsanchez2/melicena-nextjs/actions/workflows/lint.yml)
+
 Web Site about small village in the South of Spain! Deploy [here for Vercel](https://melicena-nextjs.vercel.app/) and [here for live](https://www.melicena.es).
 
 </div>

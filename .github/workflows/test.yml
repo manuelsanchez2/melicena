@@ -1,4 +1,4 @@
-name: Code Check
+name: Testing with Cypress
 on:
   push:
     branches:
@@ -11,7 +11,7 @@ concurrency:
 
 jobs:
   lint:
-    name: ⬣ ESLint, ʦ TypeScript, 💅 Prettier
+    name: ⬣ Test with Cypress
     runs-on: ubuntu-latest
     steps:
       - name: ⬇️ Checkout repo
@@ -27,11 +27,7 @@ jobs:
         with:
           useRollingCache: true
 
-      - name: 🔬 Lint
-        run: npm run lint:strict
-
-      - name: 🔎 Type check
-        run: npm run typecheck
-
-      - name: 💅 Prettier check
-        run: npm run format:check
+      - name: Cypress run
+        uses: cypress-io/github-action@v5
+        with:
+          command: npm run test:e2e

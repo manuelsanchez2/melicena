@@ -1,19 +1,15 @@
-name: Lighthouse Check
+name: Lighthouse CI
 on: push
-
 jobs:
-  lighthouse-check:
+  lighthouse:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-      - run: mkdir /tmp/artifacts
-      - name: Run Lighthouse
-        uses: foo-software/lighthouse-check-action@master
+      - uses: actions/checkout@v3
+      - name: Audit URLs using Lighthouse
+        uses: treosh/lighthouse-ci-action@v10
         with:
-          outputDirectory: /tmp/artifacts
-          urls: 'https://www.melicena.es/'
-      - name: Upload artifacts
-        uses: actions/upload-artifact@master
-        with:
-          name: Lighthouse reports
-          path: /tmp/artifacts
+          urls: |
+            https://www.melicena.es/
+            https://www.melicena.es/gallery
+          uploadArtifacts: true # save results as an action artifacts
+          temporaryPublicStorage: true # upload lighthouse report to the temporary storage
