@@ -1,6 +1,7 @@
 import UnstyledLink from '@/components/links/UnstyledLink';
 import ModeToggler from '@/components/mode-toggler/ModeToggler';
 import NextImage from '@/components/NextImage';
+import Link from 'next/link';
 
 const links = [
   { href: '/', label: 'Inicio' },
@@ -27,10 +28,10 @@ export default function Header() {
               <summary>Sobre el pueblo</summary>
               <ul className='p-2 bg-base-100'>
                 <li>
-                  <a>Galería</a>
+                  <Link href='/gallery'>Galería (en construcción)</Link>
                 </li>
                 <li>
-                  <a>Contacto</a>
+                  <Link href='/'>Contacto (en construcción)</Link>
                 </li>
               </ul>
             </details>

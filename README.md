@@ -22,11 +22,10 @@ Texts will be delivered on the fly 🪰.
 - [x] - Create the Hero Component (with text, subtitle, body and cta on the left, and image on the right)
 - [x] - Create the textImage Component (with the possibility of reverting direction with props)
 - [x] - Create the section regarding the Place of interests
-- [ ] - Create the section regarding the festivities
+- [x] - Create the section regarding the festivities
 - [ ] - Improve the banner section, if required
-- [ ] - Improve the footer section, if required
-- [ ] - Create the og graphs for better sharing of the page
-- [ ] - Create redirection from melicena.com to melicena.es
+- [x] - Improve the footer section, if required
+- [x] - Create the og graphs for better sharing of the page
   </details>
 
 <details>
@@ -35,7 +34,7 @@ Texts will be delivered on the fly 🪰.
 - [ ] - Create a second page with a Masonry Layout full of cool pictures of the village (we would need to keep them stored somewhere with the copyright for the figcaption)
 - [ ] - Create the quiz page following basically what I did on https://github.com/manuelsanchezweb/zustand-react-typescript-quiz + also adding supabase integration. This a big todo.
 - [ ] - Create the contact section, we can use https://formspree.io/f/mayaebzj as the action of the form, and I will automatically receive emails with the information.
-- [ ] - Add animations or transitions to the page
+- [x] - Add animations or transitions to the page
   </details>
 
 ## Contact

@@ -4,3 +4,6 @@ export function scrollDown(offset: number) {
     behavior: 'smooth',
   });
 }
+
+export const today = new Date();
+export const currentYear = today.getFullYear();

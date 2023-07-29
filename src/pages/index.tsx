@@ -1,21 +1,26 @@
-import Banner from '@/components/banner/Banner';
 import CardItem from '@/components/card/CardItem';
 import Hero from '@/components/hero/Hero';
-import Footer from '@/components/layout/Footer';
-import Header from '@/components/layout/Header';
 import Layout from '@/components/layout/Layout';
 import Seo from '@/components/Seo';
 import { data } from '@/data/data';
+import { useAnimateOnIntersection } from '@/hooks/useAnimateOnIntersection';
+import { currentYear, scrollDown } from '@/utils/utils';
 import Image from 'next/image';
 
 export default function HomePage() {
+  const refPlaces = useAnimateOnIntersection();
+  const refFestivities = useAnimateOnIntersection();
+
   return (
     <Layout>
       <Seo title='• Melicena Web - Tu paraíso en la costa' />
-      <Header />
-
       <main>
-        <Hero />
+        <Hero
+          title='Te damos la bienvenida a Melicena'
+          description='Un paraíso terrenal entre Almería y Granada'
+          buttonLabel='Descubre más'
+          buttonFunction={() => scrollDown(1000)}
+        />
         {/* section - info  */}
         <section
           className='mx-auto container p-4'
@@ -73,9 +78,19 @@ export default function HomePage() {
         >
           <h2 className='my-3 text-3xl font-bold mb-12'>Lugares de interés</h2>
 
-          <ul className='grid sm:grid-cols-2 lg:grid-cols-3 gap-6'>
+          <ul
+            ref={refPlaces}
+            className='grid sm:grid-cols-2 lg:grid-cols-3 gap-6'
+          >
             {data.places.map((place, index) => (
-              <CardItem data={place} key={index} />
+              <CardItem
+                itemClasses='opacity-0'
+                imgClasses='w-full h-48 object-cover'
+                imgWidth={500}
+                imgHeight={300}
+                data={place}
+                key={index}
+              />
             ))}
           </ul>
         </section>
@@ -85,11 +100,24 @@ export default function HomePage() {
           className='mx-auto container p-4'
           aria-label='Fiestas que se celebran en Melicena'
         >
-          <h2 className='my-3 text-3xl font-bold mb-12'>Fiestas populares</h2>
+          <h2 className='my-3 text-3xl font-bold mb-12'>
+            Festividades en {currentYear}
+          </h2>
 
-          <ul className='grid md:grid-cols-2 lg:grid-cols-3'>
+          <ul
+            ref={refFestivities}
+            className='grid md:grid-cols-2 lg:grid-cols-3 gap-6'
+          >
             {data.festivities.map((festivity, index) => (
-              <CardItem variant='festivity' data={festivity} key={index} />
+              <CardItem
+                itemClasses='opacity-0'
+                imgClasses='w-full h-48 object-cover'
+                imgWidth={500}
+                imgHeight={200}
+                variant='festivity'
+                data={festivity}
+                key={index}
+              />
             ))}
           </ul>
         </section>
@@ -99,7 +127,6 @@ export default function HomePage() {
           isLinkAndroid
         /> */}
       </main>
-      <Footer />
     </Layout>
   );
 }

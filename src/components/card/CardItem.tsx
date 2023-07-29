@@ -12,9 +12,20 @@ type BaseData = {
 type CardItemProps = {
   data: BaseData;
   variant?: 'place' | 'festivity';
+  imgWidth?: number;
+  imgHeight?: number;
+  imgClasses?: string;
+  itemClasses?: string;
 };
 
-const CardItem: React.FC<CardItemProps> = ({ data, variant = 'place' }) => {
+const CardItem: React.FC<CardItemProps> = ({
+  data,
+  variant = 'place',
+  imgWidth = 600,
+  imgHeight = 300,
+  imgClasses,
+  itemClasses,
+}) => {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const modalRef = useRef<HTMLFormElement>(null);
 
@@ -41,13 +52,22 @@ const CardItem: React.FC<CardItemProps> = ({ data, variant = 'place' }) => {
   }, [handleClickOutside]);
 
   return (
-    <li>
+    <li className={itemClasses}>
       <div className='card w-full max-w-96 bg-base-100 shadow-xl'>
-        <Image src={data.img} width='600' height='300' alt={data.name} />
+        <Image
+          className={`${imgClasses}`}
+          src={data.img}
+          width={imgWidth}
+          height={imgHeight}
+          alt={data.name}
+        />
         <div className='card-body'>
           <h3 className='card-title'>{data.name}</h3>
           {variant === 'place' && (
-            <p className='line-clamp-2 mb-2'>{data.description}</p>
+            <div
+              className='line-clamp-2 mb-2'
+              dangerouslySetInnerHTML={{ __html: data.description || '' }}
+            />
           )}
           {variant === 'festivity' && (
             <p className='flex items-center gap-3'>
@@ -64,24 +84,24 @@ const CardItem: React.FC<CardItemProps> = ({ data, variant = 'place' }) => {
                   <path
                     d='M3.77363 2H20.2264C21.7582 2 23 3.2418 23 4.77363V20.2264C23 21.7582 21.7582 23 20.2264 23H3.77363C2.24179 23 1 21.7582 1 20.2264V4.77363C1 3.24179 2.24179 2 3.77363 2Z'
                     stroke='currentColor'
-                    stroke-width='2'
+                    strokeWidth='2'
                   />
                   <path
                     d='M2 7L22.4347 7'
                     stroke='currentColor'
-                    stroke-width='2'
+                    strokeWidth='2'
                   />
                   <path
                     d='M7 4V1'
                     stroke='currentColor'
-                    stroke-width='2'
-                    stroke-linecap='round'
+                    strokeWidth='2'
+                    strokeLinecap='round'
                   />
                   <path
                     d='M17 4V1'
                     stroke='currentColor'
-                    stroke-width='2'
-                    stroke-linecap='round'
+                    strokeWidth='2'
+                    strokeLinecap='round'
                   />
                 </g>
                 <defs>
@@ -111,7 +131,10 @@ const CardItem: React.FC<CardItemProps> = ({ data, variant = 'place' }) => {
               ✕
             </button>
             <div className='font-bold text-lg'>{data.name}</div>
-            <p className='py-4'>{data.description}</p>
+            <div
+              className='py-4'
+              dangerouslySetInnerHTML={{ __html: data.description || '' }}
+            />
           </form>
         </dialog>
       )}
