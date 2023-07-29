@@ -11,6 +11,14 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  avoid_redundancy:
+    name: Cancel Previous Redundant Builds
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cancel Previous Redundant Builds
+        uses: styfle/cancel-workflow-action@0.9.1
+        with:
+          access_token: ${{ github.token }}
   lint:
     name: ⬣ ESLint, ʦ TypeScript, 💅 Prettier
     runs-on: ubuntu-latest
@@ -23,10 +31,8 @@ jobs:
         with:
           node-version: 18
 
-      - name: 📥 Download deps
-        uses: u0reo/npm-install@fix/restore-failure
-        with:
-          useRollingCache: true
+      - name: 📥 Install deps
+        run: npm ci
 
       - name: 🔬 Lint
         run: npm run lint:strict
