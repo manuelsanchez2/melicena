@@ -1,6 +1,6 @@
 export default {
   e2e: {
-    setupNodeEvents(on: any, config: any) {
+    setupNodeEvents(on, config) {
       // implement node event listeners here
     },
   },
