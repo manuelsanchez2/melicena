@@ -21,7 +21,7 @@ Texts will be delivered on the fly 🪰.
 
 - [x] - Create the Hero Component (with text, subtitle, body and cta on the left, and image on the right)
 - [x] - Create the textImage Component (with the possibility of reverting direction with props)
-- [ ] - Create the section regarding the Place of interests
+- [x] - Create the section regarding the Place of interests
 - [ ] - Create the section regarding the festivities
 - [ ] - Improve the banner section, if required
 - [ ] - Improve the footer section, if required
