@@ -19,7 +19,7 @@ export const useAnimateOnIntersection = (selector = 'li') => {
         setAnimated(true); // mark as animated
       }
     }
-  }, [inView, animated]);
+  }, [inView, animated, ref, selector]);
 
   return ref;
 };
