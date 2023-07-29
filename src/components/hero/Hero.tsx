@@ -12,6 +12,7 @@ const Hero = () => {
           width='500'
           height='300'
           alt='hero img'
+          priority
         />
 
         <div className='max-w-[700px] flex flex-col gap-4'>

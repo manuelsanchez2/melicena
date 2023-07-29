@@ -141,7 +141,7 @@
 }
 
 .slider {
-  background-color: gray;
+  background-color: rgb(var(--tw-color-primary-200));
   bottom: 0;
   cursor: pointer;
   left: 0;
@@ -165,7 +165,7 @@
 }
 
 input:checked + .slider {
-  background-color: #222;
+  background-color: rgb(var(--tw-color-primary-50));
 }
 
 input:checked + .slider:before {
