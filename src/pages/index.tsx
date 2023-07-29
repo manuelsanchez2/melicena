@@ -79,6 +79,7 @@ export default function HomePage() {
           <h2 className='my-3 text-3xl font-bold mb-12'>Lugares de interés</h2>
 
           <ul
+            data-cy='places'
             ref={refPlaces}
             className='grid sm:grid-cols-2 lg:grid-cols-3 gap-6'
           >
@@ -105,6 +106,7 @@ export default function HomePage() {
           </h2>
 
           <ul
+            data-cy='festivities'
             ref={refFestivities}
             className='grid md:grid-cols-2 lg:grid-cols-3 gap-6'
           >

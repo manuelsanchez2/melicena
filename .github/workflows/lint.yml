@@ -31,8 +31,10 @@ jobs:
         with:
           node-version: 18
 
-      - name: 📥 Install deps
-        run: npm ci
+      - name: 📥 Download deps
+        uses: u0reo/npm-install@fix/restore-failure
+        with:
+          useRollingCache: true
 
       - name: 🔬 Lint
         run: npm run lint:strict
