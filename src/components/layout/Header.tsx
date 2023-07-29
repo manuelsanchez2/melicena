@@ -1,19 +1,18 @@
 import UnstyledLink from '@/components/links/UnstyledLink';
 import ModeToggler from '@/components/mode-toggler/ModeToggler';
-import NextImage from '@/components/NextImage';
 import Link from 'next/link';
-
-const links = [
-  { href: '/', label: 'Inicio' },
-  { href: '/galeria', label: 'Galería' },
-  { href: '/contacto', label: 'Contacto' },
-];
 
 export default function Header() {
   return (
     <div className='navbar bg-base-100 container p-4 mx-auto'>
       <div className='flex-1'>
-        <a className='btn btn-ghost normal-case text-xl'>Melicena</a>
+        <Link
+          href='/'
+          title='A la página principal'
+          className='btn btn-ghost normal-case text-xl'
+        >
+          Melicena
+        </Link>
       </div>
       <div className='flex-none'>
         <ModeToggler />

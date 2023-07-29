@@ -18,6 +18,7 @@ const Footer = () => {
       <div>
         <div className='grid grid-flow-col gap-4'>
           <a
+            title='Ir a la página de Facebook en nueva pestaña'
             rel='nofollow noopener'
             target='_blank'
             href='https://www.facebook.com/groups/919710824783138'
