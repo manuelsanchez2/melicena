@@ -2,18 +2,26 @@ import Layout from '@/components/layout/Layout';
 import Seo from '@/components/Seo';
 import Hero from '@/components/hero/Hero';
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
+import Image from 'next/image';
+
+type ImageMasonry = {
+  src: string;
+  link?: string;
+  alt: string;
+};
 
 const IMAGES = [
-  { src: '/images/masonry/masonry-vertical-00.jpg' },
-  { src: '/images/masonry/masonry-vertical-03.jpg' },
-  { src: '/images/masonry/masonry-horizontal-01.jpg' },
+  { src: '/images/masonry/masonry-vertical-00.jpg', alt: 'Melicena' },
+  { src: '/images/masonry/masonry-vertical-03.jpg', alt: 'Melicena' },
+  { src: '/images/masonry/masonry-horizontal-01.jpg', alt: 'Melicena' },
   {
     src: '/images/masonry/masonry-vertical-02.jpg',
     link: 'https://play.google.com/store/apps/details?id=com.manusanchez.melicena&pli=1',
+    alt: 'Melicena',
   },
-  { src: '/images/masonry/masonry-horizontal-02.jpg' },
-  { src: '/images/masonry/masonry-vertical-01.jpg' },
-];
+  { src: '/images/masonry/masonry-horizontal-02.jpg', alt: 'Melicena' },
+  { src: '/images/masonry/masonry-vertical-01.jpg', alt: 'Melicena' },
+] as ImageMasonry[];
 
 export default function GalleryPage() {
   return (
@@ -42,7 +50,8 @@ export default function GalleryPage() {
                     target='_blank'
                     rel='noopener noreferrer'
                   >
-                    <img
+                    <Image
+                      alt={image.alt}
                       src={image.src}
                       style={{ width: '100%', height: 'auto' }}
                       className='rounded-lg shadow-xl max-h-[600px] object-cover'
