@@ -3,7 +3,7 @@ import Marquee from 'react-fast-marquee';
 
 const FastMarquee = () => {
   return (
-    <Marquee className='h-16' speed={120}>
+    <Marquee className='h-16' speed={100}>
       <div className='mx-5'>
         <strong>FIESTAS DE MELICENA: A partir del jueves 17 de agosto</strong>
         {'      '}
