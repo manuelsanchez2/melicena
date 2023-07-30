@@ -30,6 +30,7 @@ export default function HomePage() {
 
           <div className='container mx-auto my-24 flex flex-col items-center md:flex-row md:items-start gap-12'>
             <Image
+              priority
               src='/images/info-0.png'
               width='400'
               height='400'
@@ -51,6 +52,7 @@ export default function HomePage() {
 
           <div className='container mx-auto my-24 flex flex-col items-center md:items-start md:flex-row-reverse gap-12'>
             <Image
+              priority
               src='/images/info-1.png'
               width='400'
               height='400'

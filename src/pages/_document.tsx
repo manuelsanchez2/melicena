@@ -27,6 +27,11 @@ class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
+          <script
+            data-goatcounter='https://melicena.goatcounter.com/count'
+            async
+            src='//gc.zgo.at/count.js'
+          ></script>
         </body>
       </Html>
     );

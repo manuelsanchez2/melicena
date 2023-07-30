@@ -20,11 +20,11 @@ const Hero = ({
 }: HeroProps) => {
   return (
     <div className='container mx-auto my-12 md:my-24 w-full'>
-      <div className='hero-content flex-col lg:flex-row-reverse w-full justify-between items-center gap-4'>
+      <div className='hero-content max-w-full flex-col lg:flex-row-reverse w-full justify-between items-center gap-4'>
         <Image src={img} width='500' height='300' alt='hero img' priority />
 
         <div className='max-w-[700px] flex flex-col gap-4'>
-          <h1 className='text-5xl md:text-6xl font-bold'>{title}</h1>
+          <h1 className='text-4xl md:text-6xl font-bold'>{title}</h1>
           {description && <p className='py-2 text-2xl'>{description}</p>}
 
           {buttonLabel && buttonFunction && (
