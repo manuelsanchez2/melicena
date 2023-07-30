@@ -5,6 +5,8 @@
 # Melicena Web Page
 
 [![Code Check](https://github.com/manuelsanchez2/melicena-nextjs/actions/workflows/lint.yml/badge.svg)](https://github.com/manuelsanchez2/melicena-nextjs/actions/workflows/lint.yml)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/manuelsanchez2/melicena-nextjs/graphs/commit-activity)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
 Web Site about small village in the South of Spain! Deploy [here for Vercel](https://melicena-nextjs.vercel.app/) and [here for live](https://www.melicena.es).
 
@@ -33,9 +35,9 @@ Texts will be delivered on the fly 🪰.
 <details>
 <summary>Nice to have</summary>
 
-- [ ] - Create a second page with a Masonry Layout full of cool pictures of the village (we would need to keep them stored somewhere with the copyright for the figcaption)
+- [-] - Create a second page with a Masonry Layout full of cool pictures of the village (we would need to keep them stored somewhere with the copyright for the figcaption)
 - [ ] - Create the quiz page following basically what I did on https://github.com/manuelsanchezweb/zustand-react-typescript-quiz + also adding supabase integration. This a big todo.
-- [ ] - Create the contact section, we can use https://formspree.io/f/mayaebzj as the action of the form, and I will automatically receive emails with the information.
+- [x] - Create the contact section, we can use https://formspree.io/f/mayaebzj as the action of the form, and I will automatically receive emails with the information.
 - [x] - Add animations or transitions to the page
   </details>
 

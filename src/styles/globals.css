@@ -141,7 +141,6 @@
 }
 
 .slider {
-  background-color: rgb(var(--tw-color-primary-200));
   bottom: 0;
   cursor: pointer;
   left: 0;
@@ -164,8 +163,14 @@
   border-radius: 50%;
 }
 
-input:checked + .slider {
-  background-color: rgb(var(--tw-color-primary-50));
+@layer components {
+  .slider {
+    @apply btn-primary;
+  }
+
+  input:checked + .slider {
+    @apply btn-primary;
+  }
 }
 
 input:checked + .slider:before {

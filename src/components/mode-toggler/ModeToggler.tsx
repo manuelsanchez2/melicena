@@ -6,8 +6,8 @@ function switchTheme(e: any) {
     document.documentElement.setAttribute('data-theme', 'dark');
     localStorage.setItem('theme', 'dark');
   } else {
-    document.documentElement.setAttribute('data-theme', 'light');
-    localStorage.setItem('theme', 'light');
+    document.documentElement.setAttribute('data-theme', 'cupcake');
+    localStorage.setItem('theme', 'cupcake');
   }
 }
 
