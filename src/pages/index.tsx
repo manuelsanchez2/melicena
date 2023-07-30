@@ -14,7 +14,7 @@ export default function HomePage() {
   return (
     <Layout>
       <Seo title='• Melicena Web - Tu paraíso en la costa' />
-      <main>
+      <>
         <Hero
           title='Te damos la bienvenida a Melicena'
           description='Un paraíso terrenal entre Almería y Granada'
@@ -96,6 +96,13 @@ export default function HomePage() {
           </ul>
         </section>
 
+        {/* section - banner */}
+        {/* <Banner
+          title='Melicena APP'
+          messageFirst='Ahora disponible en Android'
+          isLinkAndroid
+        /> */}
+
         {/* section - festivities */}
         <section
           className='mx-auto container p-4'
@@ -123,12 +130,7 @@ export default function HomePage() {
             ))}
           </ul>
         </section>
-        {/* <Banner
-          title='Melicena APP'
-          messageFirst='Ahora disponible en Android'
-          isLinkAndroid
-        /> */}
-      </main>
+      </>
     </Layout>
   );
 }

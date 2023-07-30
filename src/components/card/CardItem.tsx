@@ -80,7 +80,7 @@ const CardItem: React.FC<CardItemProps> = ({
                 xmlns='http://www.w3.org/2000/svg'
               >
                 {' '}
-                <g clip-path='url(#calendar-lg-clip)'>
+                <g clipPath='url(#calendar-lg-clip)'>
                   <path
                     d='M3.77363 2H20.2264C21.7582 2 23 3.2418 23 4.77363V20.2264C23 21.7582 21.7582 23 20.2264 23H3.77363C2.24179 23 1 21.7582 1 20.2264V4.77363C1 3.24179 2.24179 2 3.77363 2Z'
                     stroke='currentColor'
