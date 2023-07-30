@@ -51,6 +51,8 @@ export default function GalleryPage() {
                     rel='noopener noreferrer'
                   >
                     <Image
+                      width={600}
+                      height={600}
                       alt={image.alt}
                       src={image.src}
                       style={{ width: '100%', height: 'auto' }}
@@ -61,6 +63,8 @@ export default function GalleryPage() {
               } else {
                 return (
                   <Image
+                    width={600}
+                    height={600}
                     alt={image.alt}
                     src={image.src}
                     style={{ width: '100%', height: 'auto' }}
