@@ -63,6 +63,7 @@ export default function GalleryPage() {
               } else {
                 return (
                   <Image
+                    key={index}
                     width={600}
                     height={600}
                     alt={image.alt}
