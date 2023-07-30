@@ -60,8 +60,8 @@ export default function GalleryPage() {
                 );
               } else {
                 return (
-                  <img
-                    key={index}
+                  <Image
+                    alt={image.alt}
                     src={image.src}
                     style={{ width: '100%', height: 'auto' }}
                     className='rounded-lg shadow-xl max-h-[600px] object-cover'
