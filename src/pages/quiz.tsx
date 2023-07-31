@@ -6,9 +6,9 @@ import { supabase } from '@/lib/api';
 
 export default function QuizPage() {
   const [data, setData] = useState([
-    { id: 1, name: 'Luis', score: 12 },
-    { id: 2, name: 'Patricio', score: 15 },
-    { id: 3, name: 'Manuel', score: 11 },
+    { id: 1, name: 'Luis', score: 7 },
+    { id: 2, name: 'Patricio', score: 10 },
+    { id: 3, name: 'Manuel', score: 10 },
   ]);
 
   useEffect(() => {
@@ -42,7 +42,7 @@ export default function QuizPage() {
               <thead>
                 <tr>
                   <th>Nombre</th>
-                  <th>Preguntas acertadas sobre 15</th>
+                  <th>Preguntas acertadas sobre 10</th>
                 </tr>
               </thead>
               <tbody>
