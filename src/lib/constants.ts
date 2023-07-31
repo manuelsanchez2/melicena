@@ -1,0 +1,2 @@
+export const REACT_APP_SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL;
+export const REACT_APP_SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_KEY;
