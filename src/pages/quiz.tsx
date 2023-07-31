@@ -31,6 +31,8 @@ export default function QuizPage() {
         <Hero
           title='Compite con los demás para demostrar tus conocimientos'
           description='¡Ahora + de 10 nuevas preguntas!'
+          linkLabel='Hacer quiz'
+          linkUrl='https://melicena-quiz.vercel.app/'
         />
         <section
           className='mx-auto container p-4'
