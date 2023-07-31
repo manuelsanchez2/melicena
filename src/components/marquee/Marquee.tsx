@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 import Marquee from 'react-fast-marquee';
 
@@ -14,7 +15,10 @@ const FastMarquee = () => {
       <div className='mx-5'>¿Quién ganará la rifa?</div>
       <div className='mx-5'>+++</div>
       <div className='mx-5'>
-        <strong>Pronto tenemos QUIZ disponible en la web</strong>{' '}
+        Ya tenemos el{' '}
+        <strong>
+          <Link href='/quiz'>QUIZ disponible en la web</Link>{' '}
+        </strong>{' '}
       </div>
       <div className='mx-5'>+++</div>
       <div className='mx-5'>

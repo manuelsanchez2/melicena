@@ -30,7 +30,7 @@ export default function Header() {
                   <Link href='/gallery'>Galería</Link>
                 </li>
                 <li>
-                  <Link href='/quiz'>Quiz (en construcción)</Link>
+                  <Link href='/quiz'>Quiz</Link>
                 </li>
               </ul>
             </details>
