@@ -9,6 +9,8 @@ type HeroProps = {
   description?: string;
   buttonLabel?: string;
   buttonFunction?: () => void;
+  linkLabel?: string;
+  linkUrl?: string;
 };
 
 const Hero = ({
@@ -17,6 +19,8 @@ const Hero = ({
   description = 'Descripción por defecto',
   buttonLabel,
   buttonFunction,
+  linkLabel,
+  linkUrl,
 }: HeroProps) => {
   return (
     <div className='container mx-auto my-12 md:my-24 w-full'>
@@ -31,6 +35,17 @@ const Hero = ({
             <button onClick={buttonFunction} className='btn btn-primary w-fit'>
               {buttonLabel}
             </button>
+          )}
+
+          {linkLabel && linkUrl && (
+            <a
+              target='_blank'
+              rel='nofollow noopener'
+              href={linkUrl}
+              className='btn btn-primary w-fit'
+            >
+              {linkLabel}
+            </a>
           )}
         </div>
       </div>

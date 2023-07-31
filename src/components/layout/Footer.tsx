@@ -13,7 +13,7 @@ const Footer = () => {
           Galería
         </Link>
 
-        <Link href='/'>Contacto </Link>
+        <Link href='/quiz'>Quiz</Link>
       </div>
       <div>
         <div className='grid grid-flow-col gap-4'>

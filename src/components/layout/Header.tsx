@@ -27,10 +27,10 @@ export default function Header() {
               <summary>Sobre el pueblo</summary>
               <ul className='p-2 bg-base-100'>
                 <li>
-                  <Link href='/gallery'>Galería (en construcción)</Link>
+                  <Link href='/gallery'>Galería</Link>
                 </li>
                 <li>
-                  <Link href='/'>Contacto (en construcción)</Link>
+                  <Link href='/quiz'>Quiz (en construcción)</Link>
                 </li>
               </ul>
             </details>
