@@ -1,15 +1,24 @@
 import UnstyledLink from '@/components/links/UnstyledLink';
 import ModeToggler from '@/components/mode-toggler/ModeToggler';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 export default function Header() {
+  const router = useRouter();
+
+  const isActive = (href: string) => {
+    return router.pathname === href;
+  };
+
   return (
     <div className='navbar bg-base-100 container p-4 mx-auto'>
       <div className='flex-1'>
         <Link
           href='/'
           title='A la página principal'
-          className='btn btn-ghost normal-case text-xl'
+          className={`btn btn-ghost normal-case text-md sm:text-xl ${
+            isActive('/') ? 'font-bold' : ''
+          }`}
         >
           Melicena
         </Link>
@@ -17,8 +26,13 @@ export default function Header() {
       <div className='flex-none'>
         <ModeToggler />
         <ul className='menu menu-horizontal px-1'>
-          <li>
-            <UnstyledLink href='/' className='hover:text-gray-600'>
+          <li className='hidden sm:block'>
+            <UnstyledLink
+              href='/'
+              className={`hover:text-gray-600 ${
+                isActive('/') ? 'font-bold' : ''
+              }`}
+            >
               Inicio
             </UnstyledLink>
           </li>
@@ -27,10 +41,20 @@ export default function Header() {
               <summary>Sobre el pueblo</summary>
               <ul className='p-2 bg-base-100'>
                 <li>
-                  <Link href='/gallery'>Galería</Link>
+                  <Link
+                    className={isActive('/gallery') ? 'font-bold' : ''}
+                    href='/gallery'
+                  >
+                    Galería
+                  </Link>
                 </li>
                 <li>
-                  <Link href='/quiz'>Quiz</Link>
+                  <Link
+                    className={isActive('/quiz') ? 'font-bold' : ''}
+                    href='/quiz'
+                  >
+                    Quiz
+                  </Link>
                 </li>
               </ul>
             </details>

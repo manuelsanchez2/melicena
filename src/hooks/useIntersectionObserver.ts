@@ -16,8 +16,8 @@ export const useIntersectionObserver = (): [
       },
       {
         root: null,
-        rootMargin: '0px',
-        threshold: 0.1,
+        rootMargin: '300px', // Increase or decrease this value to adjust sensitivity
+        threshold: 0.5, // Adjust to the desired threshold
       },
     );
 

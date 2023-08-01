@@ -141,7 +141,7 @@ export default function GalleryPage(props: JellyFishProps) {
     function handleScroll() {
       if (
         window.innerHeight + document.documentElement.scrollTop <
-        document.documentElement.offsetHeight - 600
+        document.documentElement.offsetHeight - 1200
       )
         return;
 
