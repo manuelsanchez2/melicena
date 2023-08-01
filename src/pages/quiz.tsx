@@ -87,12 +87,28 @@ export default function QuizPage(props: JellyFishProps) {
               <tbody>
                 {data
                   .sort((a, b) => b.score - a.score)
-                  .map((item) => (
-                    <tr key={item.id}>
-                      <td>{item.name}</td>
-                      <td>{item.score}</td>
-                    </tr>
-                  ))}
+                  .map((item) => {
+                    const medal = () => {
+                      if (item.score >= 10) {
+                        return '🥇';
+                      } else if (item.score >= 8) {
+                        return '🥈';
+                      } else if (item.score >= 7) {
+                        return '🥉';
+                      } else {
+                        return '';
+                      }
+                    };
+                    return (
+                      <tr key={item.id}>
+                        <td>
+                          {medal()}
+                          {item.name}
+                        </td>
+                        <td>{item.score}</td>
+                      </tr>
+                    );
+                  })}
               </tbody>
             </table>
           </div>
