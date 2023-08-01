@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.31.0",
+    "cheerio": "^1.0.0-rc.12",
     "clsx": "^2.0.0",
     "motion": "^10.16.2",
     "next": "^13.4.12",

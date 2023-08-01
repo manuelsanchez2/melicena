@@ -4,13 +4,43 @@ import Hero from '@/components/hero/Hero';
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
+import { type MediaMasonry, type JellyFishProps } from '@/types/types';
+import { load } from 'cheerio';
+import { urlJellyFishMotril } from '@/constant/constants';
 
-type MediaMasonry = {
-  src: string;
-  link?: string;
-  alt: string;
-  type: 'img' | 'video';
-};
+export async function getServerSideProps(): Promise<{ props: JellyFishProps }> {
+  try {
+    const response = await fetch(urlJellyFishMotril);
+
+    if (!response.ok) {
+      throw new Error('Problema al obtener la página de meduseo');
+    }
+
+    const data = await response.text();
+
+    const $ = load(data);
+
+    const jellyFishAmount = $(
+      '#g-header > div:nth-child(1) > div > div > div > div > div > div.card > div > div > div:nth-child(1) > div > div > div > div > div > h5',
+    ).text();
+
+    // const updatedDate = $('selector-para-la-fecha-de-actualizacion').text();
+    // const jellyFishImg = $('selector-para-la-imagen').attr('src');
+
+    return {
+      props: {
+        jellyFishAmount,
+        // updatedDate,
+      },
+    };
+  } catch (error) {
+    return {
+      props: {
+        error: (error as Error).message,
+      },
+    };
+  }
+}
 
 const MEDIA = [
   {
@@ -102,7 +132,7 @@ const MEDIA = [
   },
 ] as MediaMasonry[];
 
-export default function GalleryPage() {
+export default function GalleryPage(props: JellyFishProps) {
   const [displayedMedia, setDisplayedMedia] = useState<MediaMasonry[]>(
     MEDIA.slice(0, 12),
   );
@@ -128,7 +158,7 @@ export default function GalleryPage() {
   }, [displayedMedia]);
 
   return (
-    <Layout>
+    <Layout marqueeData={props}>
       <Seo
         templateTitle='Galería de imágenes de Melicena'
         description='Descubre aquí algunas imágenes sobre el pueblo'

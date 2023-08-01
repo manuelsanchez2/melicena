@@ -6,13 +6,50 @@ import { data } from '@/data/data';
 import { useAnimateOnIntersection } from '@/hooks/useAnimateOnIntersection';
 import { currentYear, scrollDown } from '@/utils/utils';
 import Image from 'next/image';
+import { load } from 'cheerio';
+import { urlJellyFishMotril } from '@/constant/constants';
+import { type JellyFishProps } from '@/types/types';
 
-export default function HomePage() {
+export async function getServerSideProps(): Promise<{ props: JellyFishProps }> {
+  try {
+    const response = await fetch(urlJellyFishMotril);
+
+    if (!response.ok) {
+      throw new Error('Problema al obtener la página de meduseo');
+    }
+
+    const data = await response.text();
+
+    const $ = load(data);
+
+    const jellyFishAmount = $(
+      '#g-header > div:nth-child(1) > div > div > div > div > div > div.card > div > div > div:nth-child(1) > div > div > div > div > div > h5',
+    ).text();
+
+    // const updatedDate = $('selector-para-la-fecha-de-actualizacion').text();
+    // const jellyFishImg = $('selector-para-la-imagen').attr('src');
+
+    return {
+      props: {
+        jellyFishAmount,
+        // updatedDate,
+      },
+    };
+  } catch (error) {
+    return {
+      props: {
+        error: (error as Error).message,
+      },
+    };
+  }
+}
+
+export default function HomePage(props: JellyFishProps) {
   const refPlaces = useAnimateOnIntersection();
   const refFestivities = useAnimateOnIntersection();
 
   return (
-    <Layout>
+    <Layout marqueeData={props}>
       <Seo title='• Melicena Web - Tu paraíso en la costa' />
       <>
         <Hero

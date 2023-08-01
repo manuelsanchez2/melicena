@@ -12,10 +12,47 @@ import UnstyledLink from '@/components/links/UnstyledLink';
 import NextImage from '@/components/NextImage';
 import Seo from '@/components/Seo';
 import Skeleton from '@/components/Skeleton';
+import { load } from 'cheerio';
+import { urlJellyFishMotril } from '@/constant/constants';
+import { type JellyFishProps } from '@/types/types';
+
+export async function getServerSideProps(): Promise<{ props: JellyFishProps }> {
+  try {
+    const response = await fetch(urlJellyFishMotril);
+
+    if (!response.ok) {
+      throw new Error('Problema al obtener la página de meduseo');
+    }
+
+    const data = await response.text();
+
+    const $ = load(data);
+
+    const jellyFishAmount = $(
+      '#g-header > div:nth-child(1) > div > div > div > div > div > div.card > div > div > div:nth-child(1) > div > div > div > div > div > h5',
+    ).text();
+
+    // const updatedDate = $('selector-para-la-fecha-de-actualizacion').text();
+    // const jellyFishImg = $('selector-para-la-imagen').attr('src');
+
+    return {
+      props: {
+        jellyFishAmount,
+        // updatedDate,
+      },
+    };
+  } catch (error) {
+    return {
+      props: {
+        error: (error as Error).message,
+      },
+    };
+  }
+}
 
 type Color = (typeof colorList)[number];
 
-export default function ComponentsPage() {
+export default function ComponentsPage(props: JellyFishProps) {
   const [mode, setMode] = React.useState<'dark' | 'light'>('light');
   const [color, setColor] = React.useState<Color>('sky');
   function toggleMode() {
@@ -25,7 +62,7 @@ export default function ComponentsPage() {
   const textColor = mode === 'dark' ? 'text-gray-300' : 'text-gray-600';
 
   return (
-    <Layout>
+    <Layout marqueeData={props}>
       <Seo
         templateTitle='Components'
         description='Pre-built components with awesome default'

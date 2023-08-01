@@ -3,8 +3,45 @@ import Seo from '@/components/Seo';
 import Hero from '@/components/hero/Hero';
 import { useEffect, useState } from 'react';
 import { supabase } from '@/lib/api';
+import { load } from 'cheerio';
+import { urlJellyFishMotril } from '@/constant/constants';
+import { type JellyFishProps } from '@/types/types';
 
-export default function QuizPage() {
+export async function getServerSideProps(): Promise<{ props: JellyFishProps }> {
+  try {
+    const response = await fetch(urlJellyFishMotril);
+
+    if (!response.ok) {
+      throw new Error('Problema al obtener la página de meduseo');
+    }
+
+    const data = await response.text();
+
+    const $ = load(data);
+
+    const jellyFishAmount = $(
+      '#g-header > div:nth-child(1) > div > div > div > div > div > div.card > div > div > div:nth-child(1) > div > div > div > div > div > h5',
+    ).text();
+
+    // const updatedDate = $('selector-para-la-fecha-de-actualizacion').text();
+    // const jellyFishImg = $('selector-para-la-imagen').attr('src');
+
+    return {
+      props: {
+        jellyFishAmount,
+        // updatedDate,
+      },
+    };
+  } catch (error) {
+    return {
+      props: {
+        error: (error as Error).message,
+      },
+    };
+  }
+}
+
+export default function QuizPage(props: JellyFishProps) {
   const [data, setData] = useState([
     { id: 1, name: 'Luis', score: 7 },
     { id: 2, name: 'Patricio', score: 10 },
@@ -22,7 +59,7 @@ export default function QuizPage() {
   }
 
   return (
-    <Layout>
+    <Layout marqueeData={props}>
       <Seo
         templateTitle='Quiz Page de Melicena'
         description='Descubre aquí cuánto sabes sobre el pueblo'

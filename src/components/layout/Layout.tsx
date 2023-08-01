@@ -4,11 +4,16 @@ import Header from '@/components/layout/Header';
 import FastMarquee from '@/components/marquee/Marquee';
 import * as React from 'react';
 
-export default function Layout({ children }: { children: React.ReactNode }) {
-  // Put Header or Footer Here
+export default function Layout({
+  children,
+  marqueeData,
+}: {
+  children: React.ReactNode;
+  marqueeData?: any;
+}) {
   return (
     <>
-      <FastMarquee />
+      <FastMarquee data={marqueeData} />
       <Header />
 
       <main>
