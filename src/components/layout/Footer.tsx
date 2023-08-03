@@ -9,7 +9,7 @@ const Footer = () => {
           Inicio
         </Link>
 
-        <Link href='gallery' className='link link-hover'>
+        <Link href='galeria' className='link link-hover'>
           Galería
         </Link>
 

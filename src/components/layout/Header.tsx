@@ -42,8 +42,8 @@ export default function Header() {
               <ul className='p-2 bg-base-100'>
                 <li>
                   <Link
-                    className={isActive('/gallery') ? 'font-bold' : ''}
-                    href='/gallery'
+                    className={isActive('/galeria') ? 'font-bold' : ''}
+                    href='/galeria'
                   >
                     Galería
                   </Link>
@@ -54,6 +54,14 @@ export default function Header() {
                     href='/quiz'
                   >
                     Quiz
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className={isActive('/fiestas-2023') ? 'font-bold' : ''}
+                    href='/fiestas-2023'
+                  >
+                    Programación Fiestas 2023
                   </Link>
                 </li>
               </ul>
