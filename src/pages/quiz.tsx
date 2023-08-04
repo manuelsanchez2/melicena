@@ -61,7 +61,7 @@ export default function QuizPage(props: JellyFishProps) {
   return (
     <Layout marqueeData={props}>
       <Seo
-        templateTitle='Quiz Page de Melicena'
+        templateTitle='• Quiz Page de Melicena'
         description='Descubre aquí cuánto sabes sobre el pueblo'
       />
       <main>

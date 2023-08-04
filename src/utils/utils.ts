@@ -24,7 +24,7 @@ export function processJellyfishInfo(jellyFishAmount: string) {
     case 'Rare jellyfish':
       return {
         translation: 'Pocas medusas',
-        color: 'text-green-200',
+        color: 'text-green-400',
       };
     case 'Few jellyfish':
       return {

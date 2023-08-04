@@ -10,8 +10,13 @@ const WeekWithEvents = () => {
         events={[
           {
             title: 'Cine de verano: Bella',
-            time: '23:00',
+            time: '22:00',
             place: 'Paseo marítimo',
+          },
+          {
+            title: 'Noche de Bingo',
+            time: '23:45',
+            place: 'Recinto ferial',
           },
         ]}
       />

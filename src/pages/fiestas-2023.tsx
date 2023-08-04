@@ -16,6 +16,11 @@ const MEDIA = [
     type: 'img',
   },
   {
+    src: '/images/fiestas-2023/17-agosto-bingo.jpeg',
+    alt: 'Melicena',
+    type: 'img',
+  },
+  {
     src: '/images/fiestas-2023/18-agosto-dj.jpeg',
     alt: 'Melicena',
     type: 'img',
@@ -75,7 +80,7 @@ export default function Fiestas2023Page(props: JellyFishProps) {
   return (
     <Layout marqueeData={props}>
       <Seo
-        templateTitle='Programación Fiestas Melicena 2023'
+        templateTitle='• Programación Fiestas Melicena 2023'
         description='Descubre qué tiene preparada la Comisión de Fiestas'
       />
       <main>

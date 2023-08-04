@@ -160,7 +160,7 @@ export default function GalleryPage(props: JellyFishProps) {
   return (
     <Layout marqueeData={props}>
       <Seo
-        templateTitle='Galería de imágenes de Melicena'
+        templateTitle='• Galería de imágenes de Melicena'
         description='Descubre aquí algunas imágenes sobre el pueblo'
       />
 
