@@ -45,7 +45,7 @@ export async function getServerSideProps(): Promise<{ props: JellyFishProps }> {
 }
 
 export default function HomePage(props: JellyFishProps) {
-  const refPlaces = useAnimateOnIntersection();
+  // const refPlaces = useAnimateOnIntersection();
   const refFestivities = useAnimateOnIntersection();
 
   return (
@@ -119,12 +119,11 @@ export default function HomePage(props: JellyFishProps) {
 
           <ul
             data-cy='places'
-            ref={refPlaces}
             className='grid sm:grid-cols-2 lg:grid-cols-3 gap-6'
           >
             {data.places.map((place, index) => (
               <CardItem
-                itemClasses='opacity-0'
+                itemClasses=''
                 imgClasses='w-full h-48 object-cover'
                 imgWidth={500}
                 imgHeight={300}
@@ -134,13 +133,6 @@ export default function HomePage(props: JellyFishProps) {
             ))}
           </ul>
         </section>
-
-        {/* section - banner */}
-        {/* <Banner
-          title='Melicena APP'
-          messageFirst='Ahora disponible en Android'
-          isLinkAndroid
-        /> */}
 
         {/* section - festivities */}
         <section

@@ -16,7 +16,7 @@ export default function Header() {
         <Link
           href='/'
           title='A la página principal'
-          className={`btn btn-ghost normal-case text-md sm:text-xl ${
+          className={`btn btn-ghost normal-case text-md sm:text-xl pl-2 pr-2 ${
             isActive('/') ? 'font-bold' : ''
           }`}
         >
