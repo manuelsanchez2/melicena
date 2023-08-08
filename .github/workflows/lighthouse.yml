@@ -10,7 +10,7 @@ jobs:
         uses: foo-software/lighthouse-check-action@master
         with:
           outputDirectory: /tmp/artifacts
-          urls: 'https://www.melicena.es/, https://www.melicena.es/gallery'
+          urls: 'https://www.melicena.es/, https://www.melicena.es/galeria, https://www.melicena.es/quiz'
       - name: Upload artifacts
         uses: actions/upload-artifact@master
         with:
