@@ -1,5 +1,4 @@
 import DayWithEvents from '@/components/day-with-events/DayWithEvents';
-import React from 'react';
 
 const WeekWithEvents = () => {
   return (
@@ -34,8 +33,18 @@ const WeekWithEvents = () => {
             time: '12:00',
           },
           {
+            title: 'Gaming Day',
+            time: '19:00',
+            place: 'Salón de usos múltiples',
+          },
+          {
             title: 'Fiesta ibicenca',
             time: '23:00',
+            place: 'Recinto ferial',
+          },
+          {
+            title: 'Duo Los Canarios',
+            time: 'XX:XX',
             place: 'Recinto ferial',
           },
           {
@@ -49,8 +58,12 @@ const WeekWithEvents = () => {
         month='Agosto'
         events={[
           {
-            title: 'Por definir',
-            time: 'XX:XX',
+            title: 'Los Vinilos - Pop de los 80',
+            time: '23:30',
+          },
+          {
+            title: 'Neon Party',
+            time: '01:00',
           },
         ]}
       />

@@ -15,7 +15,7 @@ type DayWithEventsProps = {
 const DayWithEvents = ({ day, month, events }: DayWithEventsProps) => {
   return (
     <div className='lg:flex shadow rounded-sm border border-gray-400 mb-6'>
-      <div className='bg-primary-500 lg:w-2/12 py-4 block h-full shadow-inner'>
+      <div className='bg-primary-500 lg:w-2/12 py-4 block shadow-inner'>
         <div className='text-center tracking-wide'>
           <div className='text-white font-bold text-4xl '>{day}</div>
           <div className='text-white font-normal text-2xl'>{month}</div>

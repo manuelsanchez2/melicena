@@ -4,7 +4,6 @@ import Hero from '@/components/hero/Hero';
 import { load } from 'cheerio';
 import { urlJellyFishMotril } from '@/constant/constants';
 import { type JellyFishProps } from '@/types/types';
-import DayWithEvents from '@/components/day-with-events/DayWithEvents';
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 import Image from 'next/image';
 import WeekWithEvents from '@/components/week-with-events/WeekWithEvents';
@@ -37,6 +36,26 @@ const MEDIA = [
   },
   {
     src: '/images/fiestas-2023/18-agosto-migas.jpeg',
+    alt: 'Melicena',
+    type: 'img',
+  },
+  {
+    src: '/images/fiestas-2023/18-agosto-gaming-day.jpeg',
+    alt: 'Melicena',
+    type: 'img',
+  },
+  {
+    src: '/images/fiestas-2023/18-agosto-los-canarios.jpg',
+    alt: 'Melicena',
+    type: 'img',
+  },
+  {
+    src: '/images/fiestas-2023/19-agosto-los-vinilos.jpeg',
+    alt: 'Melicena',
+    type: 'img',
+  },
+  {
+    src: '/images/fiestas-2023/19-agosto-neon-party.jpeg',
     alt: 'Melicena',
     type: 'img',
   },
@@ -96,9 +115,7 @@ export default function Fiestas2023Page(props: JellyFishProps) {
 
           <WeekWithEvents />
 
-          <ResponsiveMasonry
-            columnsCountBreakPoints={{ 350: 2, 750: 4, 1200: 5 }}
-          >
+          <ResponsiveMasonry columnsCountBreakPoints={{ 350: 2, 750: 4 }}>
             <Masonry gutter={'20px'} className='masonry container mx-auto p-4'>
               {MEDIA.map((media, index) => (
                 <Image
