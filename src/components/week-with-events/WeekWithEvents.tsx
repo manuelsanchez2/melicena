@@ -58,11 +58,36 @@ const WeekWithEvents = () => {
         month='Agosto'
         events={[
           {
-            title: 'Los Vinilos - Pop de los 80',
+            title: 'Diana floreada y pasacalles con la charanga LA YUNKA',
+            time: '10:00',
+          },
+          {
+            title:
+              'Celebración de la Santa misa en honor a la Virgen del Carmen',
+            time: '11:30',
+          },
+          {
+            title: 'Taller de pintura de manos',
+            time: '13:00',
+          },
+          {
+            title: 'Fecha del mediodía',
+            time: '14:00',
+          },
+          {
+            title: 'Carrera de Cintas',
+            time: '18:30',
+          },
+          {
+            title: 'Salida de la procesión en honor a la Virgen del Carmen',
+            time: '20:30',
+          },
+          {
+            title: 'Velada musical a cargo de Los Vinilos - Pop de los 80',
             time: '23:30',
           },
           {
-            title: 'Neon Party',
+            title: 'Neon Party con DJ Danny Diaz',
             time: '01:00',
           },
         ]}
