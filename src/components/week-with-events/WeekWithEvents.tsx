@@ -8,7 +8,7 @@ const WeekWithEvents = () => {
         month='Agosto'
         events={[
           {
-            title: 'Cine de verano: Bella',
+            title: 'Cine de verano: Los Mitchels contra las máquinas',
             time: '22:00',
             place: 'Paseo marítimo',
           },
@@ -24,17 +24,17 @@ const WeekWithEvents = () => {
         month='Agosto'
         events={[
           {
-            title: 'Juegos Populares',
+            title: 'Repique de camapnas y cohetes y Juegos Populares',
             time: '10:00',
             place: 'Junto al peñón',
           },
           {
-            title: 'Feria del mediodía',
-            time: '12:00',
+            title: 'Feria del mediodía con tapeo',
+            time: '14:00',
           },
           {
             title: 'Gaming Day',
-            time: '19:00',
+            time: '18:00',
             place: 'Salón de usos múltiples',
           },
           {
@@ -44,7 +44,12 @@ const WeekWithEvents = () => {
           },
           {
             title: 'Duo Los Canarios',
-            time: 'XX:XX',
+            time: '23:00',
+            place: 'Recinto ferial',
+          },
+          {
+            title: 'Elección de Reina de las Fiestas, Damas y Reina infantil',
+            time: '00:30',
             place: 'Recinto ferial',
           },
           {
@@ -97,8 +102,37 @@ const WeekWithEvents = () => {
         month='Agosto'
         events={[
           {
-            title: 'Por definir',
-            time: 'XX:XX',
+            title: 'Diana floreada y pasacalles con la charanga LA YUNKA',
+            time: '10:00',
+          },
+          {
+            title: 'Fiesta de la espuma (junto al peñón)',
+            time: '12:00',
+          },
+          {
+            title: 'Fecha del mediodía',
+            time: '14:00',
+          },
+          {
+            title: 'Mago Luisma (junto al peñón)',
+            time: '18:30',
+          },
+          {
+            title: 'Concurso de disfraces y pasacalles',
+            time: '20:30',
+          },
+          {
+            title:
+              'Comienzo de la Verbena musical a cargo de RAUL VAZCO y DJ ISMA MOLINA',
+            time: '23:00',
+          },
+          {
+            title: 'Castillo de Fuegos Artificiales y entrega de premios',
+            time: '01:00',
+          },
+          {
+            title: 'Continuación de la velada musical',
+            time: '01:30',
           },
         ]}
       />

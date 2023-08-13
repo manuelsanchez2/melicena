@@ -10,7 +10,7 @@ import WeekWithEvents from '@/components/week-with-events/WeekWithEvents';
 
 const MEDIA = [
   {
-    src: '/images/fiestas-2023/17-agosto-cine.jpeg',
+    src: '/images/fiestas-2023/17-agosto-cine.jpg',
     alt: 'Melicena',
     type: 'img',
   },
@@ -56,6 +56,36 @@ const MEDIA = [
   },
   {
     src: '/images/fiestas-2023/19-agosto-neon-party.jpeg',
+    alt: 'Melicena',
+    type: 'img',
+  },
+  {
+    src: '/images/fiestas-2023/20-agosto-disfraces-2030.jpeg',
+    alt: 'Melicena',
+    type: 'img',
+  },
+  {
+    src: '/images/fiestas-2023/20-agosto-dj-isma.jpeg',
+    alt: 'Melicena',
+    type: 'img',
+  },
+  {
+    src: '/images/fiestas-2023/20-agosto-espuma-12.jpeg',
+    alt: 'Melicena',
+    type: 'img',
+  },
+  {
+    src: '/images/fiestas-2023/20-agosto-feria-mediodia-14.jpeg',
+    alt: 'Melicena',
+    type: 'img',
+  },
+  {
+    src: '/images/fiestas-2023/20-agosto-mago-1830.jpeg',
+    alt: 'Melicena',
+    type: 'img',
+  },
+  {
+    src: '/images/fiestas-2023/20-agosto-supernova.jpeg',
     alt: 'Melicena',
     type: 'img',
   },
