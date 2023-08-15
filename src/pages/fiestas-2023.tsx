@@ -2,7 +2,7 @@ import Layout from '@/components/layout/Layout';
 import Seo from '@/components/Seo';
 import Hero from '@/components/hero/Hero';
 import { load } from 'cheerio';
-import { urlJellyFishMotril } from '@/constant/constants';
+import { jellyFishInfo, urlJellyFishMotril } from '@/constant/constants';
 import { type JellyFishProps } from '@/types/types';
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 import Image from 'next/image';
@@ -103,9 +103,7 @@ export async function getServerSideProps(): Promise<{ props: JellyFishProps }> {
 
     const $ = load(data);
 
-    const jellyFishAmount = $(
-      '#g-header > div:nth-child(1) > div > div > div > div > div > div.card > div > div > div:nth-child(1) > div > div > div > div > div > h5',
-    ).text();
+    const jellyFishAmount = $(jellyFishInfo).text();
 
     // const updatedDate = $('selector-para-la-fecha-de-actualizacion').text();
     // const jellyFishImg = $('selector-para-la-imagen').attr('src');

@@ -7,7 +7,7 @@ import { useAnimateOnIntersection } from '@/hooks/useAnimateOnIntersection';
 import { currentYear, scrollDown } from '@/utils/utils';
 import Image from 'next/image';
 import { load } from 'cheerio';
-import { urlJellyFishMotril } from '@/constant/constants';
+import { jellyFishInfo, urlJellyFishMotril } from '@/constant/constants';
 import { type JellyFishProps } from '@/types/types';
 
 export async function getServerSideProps(): Promise<{ props: JellyFishProps }> {
@@ -22,9 +22,7 @@ export async function getServerSideProps(): Promise<{ props: JellyFishProps }> {
 
     const $ = load(data);
 
-    const jellyFishAmount = $(
-      '#g-header > div:nth-child(1) > div > div > div > div > div > div.card > div > div > div:nth-child(1) > div > div > div > div > div > h5',
-    ).text();
+    const jellyFishAmount = $(jellyFishInfo).text();
 
     // const updatedDate = $('selector-para-la-fecha-de-actualizacion').text();
     // const jellyFishImg = $('selector-para-la-imagen').attr('src');
