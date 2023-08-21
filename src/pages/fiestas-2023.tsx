@@ -133,7 +133,7 @@ export default function Fiestas2023Page(props: JellyFishProps) {
       <main>
         <Hero
           title='Programación de las fiestas de Melicena de 2023'
-          description='¡Preparaos que se viene una buena!'
+          description=''
         />
         <section
           className='mx-auto container p-4'

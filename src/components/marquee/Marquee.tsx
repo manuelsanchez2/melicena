@@ -8,12 +8,6 @@ export default function FastMarquee({ data }: { data: any }) {
 
   return (
     <Marquee className='h-16' speed={100}>
-      <div className='mx-5'>
-        <strong>FIESTAS DE MELICENA: A partir del jueves 17 de agosto</strong>
-        {'      '}
-      </div>
-      <div className='mx-5'>+++</div>
-      <div className='mx-5'>¿Tienes ya tu disfraz preparado?</div>
       <div className='mx-5'>+++</div>
       <div className='mx-5'>
         Estado del mar:{' '}
@@ -21,8 +15,6 @@ export default function FastMarquee({ data }: { data: any }) {
           {jellyFishMessage.translation}
         </span>
       </div>
-      <div className='mx-5'>+++</div>
-      <div className='mx-5'>¿Quién ganará la rifa?</div>
       <div className='mx-5'>+++</div>
       <div className='mx-5'>
         Ya tenemos el{' '}
