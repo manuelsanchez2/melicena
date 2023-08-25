@@ -3,32 +3,26 @@ import Seo from '@/components/Seo';
 import Hero from '@/components/hero/Hero';
 import { useEffect, useMemo, useState } from 'react';
 import { supabase } from '@/lib/api';
-import { load } from 'cheerio';
-import { jellyFishInfo, urlJellyFishMotril } from '@/constant/constants';
+import { jellyFishInfo, tempWater, waveInfo } from '@/constant/constants';
 import { type JellyFishProps } from '@/types/types';
 import usePagination from '@/hooks/usePagination';
+import { fetchInfoMelicena, fetchJellyFishInfo } from '@/api/fetch';
 
 export async function getServerSideProps(): Promise<{ props: JellyFishProps }> {
   try {
-    const response = await fetch(urlJellyFishMotril);
+    const $jelly = await fetchJellyFishInfo();
+    const jellyFishAmount = $jelly(jellyFishInfo).text();
 
-    if (!response.ok) {
-      throw new Error('Problema al obtener la página de meduseo');
-    }
+    const $melicena = await fetchInfoMelicena();
 
-    const data = await response.text();
-
-    const $ = load(data);
-
-    const jellyFishAmount = $(jellyFishInfo).text();
-
-    // const updatedDate = $('selector-para-la-fecha-de-actualizacion').text();
-    // const jellyFishImg = $('selector-para-la-imagen').attr('src');
+    const waveInfoPower = $melicena(waveInfo).text();
+    const tempWaterInfo = $melicena(tempWater).text();
 
     return {
       props: {
         jellyFishAmount,
-        // updatedDate,
+        waveInfoPower,
+        tempWaterInfo,
       },
     };
   } catch (error) {

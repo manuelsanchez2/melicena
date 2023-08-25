@@ -1,7 +1,7 @@
 export type JellyFishProps = {
   jellyFishAmount?: string;
-  updatedDate?: string;
-  jellyFishImg?: string;
+  waveInfoPower?: string;
+  tempWaterInfo?: string;
   error?: string;
 };
 

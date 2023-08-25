@@ -6,30 +6,25 @@ import { data } from '@/data/data';
 import { useAnimateOnIntersection } from '@/hooks/useAnimateOnIntersection';
 import { currentYear, scrollDown } from '@/utils/utils';
 import Image from 'next/image';
-import { load } from 'cheerio';
-import { jellyFishInfo, urlJellyFishMotril } from '@/constant/constants';
+import { jellyFishInfo, tempWater, waveInfo } from '@/constant/constants';
 import { type JellyFishProps } from '@/types/types';
+import { fetchInfoMelicena, fetchJellyFishInfo } from '@/api/fetch';
 
 export async function getServerSideProps(): Promise<{ props: JellyFishProps }> {
   try {
-    const response = await fetch(urlJellyFishMotril);
+    const $jelly = await fetchJellyFishInfo();
+    const jellyFishAmount = $jelly(jellyFishInfo).text();
 
-    if (!response.ok) {
-      throw new Error('Problema al obtener la página de meduseo');
-    }
+    const $melicena = await fetchInfoMelicena();
 
-    const data = await response.text();
-
-    const $ = load(data);
-
-    const jellyFishAmount = $(jellyFishInfo).text();
-
-    // const updatedDate = $('selector-para-la-fecha-de-actualizacion').text();
-    // const jellyFishImg = $('selector-para-la-imagen').attr('src');
+    const waveInfoPower = $melicena(waveInfo).text();
+    const tempWaterInfo = $melicena(tempWater).text();
 
     return {
       props: {
         jellyFishAmount,
+        waveInfoPower,
+        tempWaterInfo,
         // updatedDate,
       },
     };

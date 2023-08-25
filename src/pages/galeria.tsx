@@ -5,30 +5,24 @@ import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { type MediaMasonry, type JellyFishProps } from '@/types/types';
-import { load } from 'cheerio';
-import { jellyFishInfo, urlJellyFishMotril } from '@/constant/constants';
+import { jellyFishInfo, tempWater, waveInfo } from '@/constant/constants';
+import { fetchInfoMelicena, fetchJellyFishInfo } from '@/api/fetch';
 
 export async function getServerSideProps(): Promise<{ props: JellyFishProps }> {
   try {
-    const response = await fetch(urlJellyFishMotril);
+    const $jelly = await fetchJellyFishInfo();
+    const jellyFishAmount = $jelly(jellyFishInfo).text();
 
-    if (!response.ok) {
-      throw new Error('Problema al obtener la página de meduseo');
-    }
+    const $melicena = await fetchInfoMelicena();
 
-    const data = await response.text();
-
-    const $ = load(data);
-
-    const jellyFishAmount = $(jellyFishInfo).text();
-
-    // const updatedDate = $('selector-para-la-fecha-de-actualizacion').text();
-    // const jellyFishImg = $('selector-para-la-imagen').attr('src');
+    const waveInfoPower = $melicena(waveInfo).text();
+    const tempWaterInfo = $melicena(tempWater).text();
 
     return {
       props: {
         jellyFishAmount,
-        // updatedDate,
+        waveInfoPower,
+        tempWaterInfo,
       },
     };
   } catch (error) {

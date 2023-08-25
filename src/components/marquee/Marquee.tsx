@@ -5,6 +5,8 @@ import Marquee from 'react-fast-marquee';
 
 export default function FastMarquee({ data }: { data: any }) {
   const jellyFishMessage = processJellyfishInfo(data.jellyFishAmount);
+  const [_, state] = data.waveInfoPower.trim().split(/\s+/);
+  const waterTemp = data.tempWaterInfo.trim();
 
   return (
     <Marquee className='h-16' speed={100}>
@@ -14,6 +16,14 @@ export default function FastMarquee({ data }: { data: any }) {
         <span className={`ml-3 font-bold ${jellyFishMessage.color}`}>
           {jellyFishMessage.translation}
         </span>
+      </div>
+      <div className='mx-5'>+++</div>
+      <div className='mx-5'>
+        Nivel de oleaje: <span className={`ml-3 font-bold`}>{state}</span>
+      </div>
+      <div className='mx-5'>+++</div>
+      <div className='mx-5'>
+        <span className={`ml-3 font-bold`}>{waterTemp}</span>
       </div>
       <div className='mx-5'>+++</div>
       <div className='mx-5'>
