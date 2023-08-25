@@ -17,14 +17,22 @@ export default function FastMarquee({ data }: { data: any }) {
           {jellyFishMessage.translation}
         </span>
       </div>
-      <div className='mx-5'>+++</div>
-      <div className='mx-5'>
-        Nivel de oleaje: <span className={`ml-3 font-bold`}>{state}</span>
-      </div>
-      <div className='mx-5'>+++</div>
-      <div className='mx-5'>
-        <span className={`ml-3 font-bold`}>{waterTemp}</span>
-      </div>
+      {state.length > 0 && <div className='mx-5'>+++</div>}
+      {state.length > 0 && (
+        <div className='mx-5'>
+          Nivel de oleaje: <span className={`ml-3 font-bold`}>{state}</span>
+        </div>
+      )}
+
+      {waterTemp.length > 0 && <div className='mx-5'>+++</div>}
+      {waterTemp.length > 0 && (
+        <div className='mx-5'>
+          <span className={`ml-3 font-bold text-[var(--color-primary-700)]`}>
+            {waterTemp}
+          </span>
+        </div>
+      )}
+
       <div className='mx-5'>+++</div>
       <div className='mx-5'>
         Ya tenemos el{' '}
