@@ -1,0 +1,83 @@
+[
+  {
+    "id": "1",
+    "name": "Francisco López Fernández",
+    "partner": "Clemencia Martín Moreno",
+    "children": [
+      {
+        "id": "11",
+        "name": "Emeterio López Martín",
+        "partner": "Ana Pozo Navarro",
+        "children": [
+          {
+            "id": "111",
+            "name": "Salvador López Pozo",
+            "partner": "Isabel Sánchez Jiménez"
+          },
+          {
+            "id": "112",
+            "name": "Juan López Pozo",
+            "partner": "Sabina Caballero Flores"
+          },
+          {
+            "id": "113",
+            "name": "Ana López Pozo",
+            "partner": "Antonio Braos"
+          },
+          {
+            "id": "114",
+            "name": "Rosario López Pozo",
+            "partner": "Juan Rubia Gómez"
+          },
+          {
+            "id": "115",
+            "name": "Encarnación López Pozo",
+            "partner": "Luis Fernández Juárez"
+          },
+          {
+            "id": "116",
+            "name": "Virtudes López Pozo",
+            "partner": "Juan Juárez Fernández"
+          }
+        ]
+      },
+      {
+        "id": "12",
+        "name": "Francisco López Martín",
+        "partner": "Camila Sáez Rodríguez",
+        "children": [
+          {
+            "id": "121",
+            "name": "Grand Child"
+          }
+        ]
+      },
+      {
+        "id": "13",
+        "name": "María López Martín",
+        "partner": "XXX XXX",
+        "children": [
+          {
+            "id": "131",
+            "name": "Grand Child"
+          }
+        ]
+      },
+      {
+        "id": "14",
+        "name": "Clemencia López Martín",
+        "partner": "XXX XXX",
+        "children": [
+          {
+            "id": "141",
+            "name": "Grand Child"
+          }
+        ]
+      },
+      {
+        "id": "15",
+        "name": "José López Martín"
+      }
+    ]
+  }
+]
