@@ -73,8 +73,7 @@
                     "children": [
                       {
                         "id": 111311,
-                        "name": "Raquel López XXX",
-                        "partner": "Miguel Martín"
+                        "name": "Raquel López XXX"
                       }
                     ]
                   },
@@ -96,9 +95,7 @@
                     "children": [
                       {
                         "id": 111411,
-                        "name": "Rosario Sánchez Guerrero",
-                        "partner": "Juan XXX XXX",
-                        "incomplete": true
+                        "name": "Rosario Sánchez Guerrero"
                       },
                       {
                         "id": 111412,
@@ -113,13 +110,11 @@
                     "children": [
                       {
                         "id": 111421,
-                        "name": "Isabel María Sánchez Sánchez",
-                        "partner": "Tomás del Campo Múñoz"
+                        "name": "Isabel María Sánchez Sánchez"
                       },
                       {
                         "id": 111422,
-                        "name": "Mª Carmen Sánchez Sánchez",
-                        "partner": "Carlos Campoy"
+                        "name": "Mª Carmen Sánchez Sánchez"
                       },
                       {
                         "id": 111423,

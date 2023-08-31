@@ -48,6 +48,12 @@ export const findRelationship = (data: Node[], id1: number, id2: number) => {
   if (len1 === 2 && len2 === 4) return 'Tí@ abuel@-Sobrin@ niet@';
   if (len2 === 2 && len1 === 4) return 'Tí@ abuel@-Sobrin@ niet@';
 
+  if (len1 === 2 && len2 === 5) return 'Tí@ bisabuel@-Sobrin@ bisniet@';
+  if (len2 === 2 && len1 === 5) return 'Tí@ bisabuel@-Sobrin@ bisniet@';
+
+  if (len1 === 2 && len2 === 6) return 'Tí@ tatarabuel@-Sobrin@ tataraniet@';
+  if (len2 === 2 && len1 === 6) return 'Tí@ tatarabuel@-Sobrin@ tataraniet@';
+
   if (len1 === 3 && len2 === 4) return 'Prim@s segundos';
   if (len2 === 3 && len1 === 4) return 'Prim@s segundos';
 
