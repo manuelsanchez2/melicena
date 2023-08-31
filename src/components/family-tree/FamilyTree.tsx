@@ -2,34 +2,31 @@ import { Tree, TreeNode } from 'react-organizational-chart';
 import data from './family.json';
 import { StyledNode } from '@/components/family-tree/StyledNode';
 import { useState } from 'react';
-
-const findRelationship = (data: any, person1: any, person2: any) => {
-  // Logic to find the relationship between two people.
-  // For now, just a placeholder.
-  return 'cousin';
-};
+import { findRelationship } from '@/components/family-tree/functions';
 
 const FamilyTree = () => {
   const [selectedPeople, setSelectedPeople] = useState([]);
 
   const handleClick = (person: any) => {
-    // Limiting to only 2 people being selected at a time
-    if (selectedPeople.length < 2) {
-      setSelectedPeople([...selectedPeople, person]);
-    }
-
     if (selectedPeople.length === 1) {
-      const relationship = findRelationship(data, selectedPeople[0], person);
+      const nextSelected = [...selectedPeople, person];
+      const relationship = findRelationship(
+        data,
+        nextSelected[0].id,
+        person.id,
+      );
       alert(
-        `The relationship between ${selectedPeople[0].name} and ${person.name} is ${relationship}`,
+        `La relación entre ${nextSelected[0].name} y ${person.name} es: ${relationship}`,
       );
       setSelectedPeople([]); // Clear the selected people
+    } else {
+      setSelectedPeople([...selectedPeople, person]);
     }
   };
 
   const isSelected = (person: any) => {
     return selectedPeople.some(
-      (selectedPerson) => selectedPerson.name === person.name,
+      (selectedPerson) => selectedPerson.id === person.id,
     );
   };
 
@@ -39,6 +36,7 @@ const FamilyTree = () => {
         key={person.id}
         label={
           <StyledNode
+            id={person.id}
             selected={isSelected(person)}
             onClick={() => handleClick(person)}
           >
@@ -65,7 +63,7 @@ const FamilyTree = () => {
         lineColor={'green'}
         lineBorderRadius={'10px'}
         label={
-          <StyledNode onClick={() => console.log('Yehja')}>
+          <StyledNode id={0} onClick={() => console.log('Yehja')}>
             La familia López
           </StyledNode>
         }

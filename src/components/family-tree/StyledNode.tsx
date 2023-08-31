@@ -2,13 +2,19 @@ export const StyledNode = ({
   children,
   onClick,
   selected,
+  id,
 }: {
   children: React.ReactNode;
   onClick?: Function;
   selected?: boolean;
+  id: number;
 }) => {
+  let idString = id.toString();
+  let className = `level-${idString.length}`;
+
   return (
     <div
+      className={className}
       onClick={() => onClick()}
       style={{
         padding: '5px',
@@ -18,6 +24,8 @@ export const StyledNode = ({
         cursor: 'pointer',
         fontSize: '12px',
         minWidth: '180px',
+        whiteSpace: 'pre',
+        color: 'lightgray',
       }}
     >
       {children}

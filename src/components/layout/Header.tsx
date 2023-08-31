@@ -64,6 +64,14 @@ export default function Header() {
                     Programación Fiestas 2023
                   </Link>
                 </li>
+                <li>
+                  <Link
+                    className={isActive('/arbol-familia') ? 'font-bold' : ''}
+                    href='/arbol-familia'
+                  >
+                    Árbol López (en construcción)
+                  </Link>
+                </li>
               </ul>
             </details>
           </li>
